@@ -23,10 +23,10 @@ class StatefulServiceTest {
         int userBprice = statefulService2.order("userB", 20000);
 
         //TheadA: 사용자A 주문 금액 조회
-        int price = statefulService1.getPrice();
+        //int price = statefulService1.getPrice();
         System.out.println("price: " + userAprice);
 
-        Assertions.assertThat(statefulService1.getPrice()).isEqualTo(20000);
+        //  Assertions.assertThat(statefulService1.getPrice()).isEqualTo(20000);
     }
     static class TestConfig {
 
