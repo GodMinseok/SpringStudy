@@ -6,20 +6,16 @@ import hello.Inflearn_Spring_Basic.discount.RateDiscountPolicy;
 import hello.Inflearn_Spring_Basic.member.Member;
 import hello.Inflearn_Spring_Basic.member.MemberRepository;
 import hello.Inflearn_Spring_Basic.member.MemoryMemberRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
+@RequiredArgsConstructor
 public class OrderServiceImpl implements OrderService {
 
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
-
-
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
-        this.memberRepository = memberRepository;
-        this.discountPolicy = discountPolicy;
-    }
 
 
     @Override
@@ -31,7 +27,7 @@ public class OrderServiceImpl implements OrderService {
     }
 
     //테스트 용도
-    public MemberRepository getMemberRepository() {
-        return memberRepository;
-    }
+//    public MemberRepository getMemberRepository() {
+//        return memberRepository;
+//    }
 }
