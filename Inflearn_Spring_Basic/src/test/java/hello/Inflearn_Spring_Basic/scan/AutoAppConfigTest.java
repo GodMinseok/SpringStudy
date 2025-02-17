@@ -1,13 +1,12 @@
-package hello.Inflearn_Spring_Basic;
+package hello.Inflearn_Spring_Basic.scan;
 
+import hello.Inflearn_Spring_Basic.AppConfig;
 import hello.Inflearn_Spring_Basic.member.MemberService;
 import hello.Inflearn_Spring_Basic.member.MemberServiceImpl;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 class AutoAppConfigTest {
 
