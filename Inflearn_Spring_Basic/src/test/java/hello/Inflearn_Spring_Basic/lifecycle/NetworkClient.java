@@ -7,7 +7,6 @@ import org.springframework.beans.factory.InitializingBean;
 
 public class NetworkClient {
 
-
     private String url;
 
     public NetworkClient() {
