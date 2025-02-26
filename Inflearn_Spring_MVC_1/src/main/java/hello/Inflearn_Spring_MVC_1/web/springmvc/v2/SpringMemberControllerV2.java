@@ -14,6 +14,7 @@ import java.util.List;
 @RequestMapping("/spring/v2/members")
 public class SpringMemberControllerV2 {
 
+
     private MemberRepository memberRepository = MemberRepository.getInstance();
 
     @RequestMapping("/new-form")
