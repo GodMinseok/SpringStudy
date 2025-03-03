@@ -76,6 +76,12 @@ public class BasicController {
         model.addAttribute("param2", "data2");
         return "basic/link";
     }
+
+    @GetMapping("/literal")
+    public String literal(Model model) {
+        model.addAttribute("data", "Spring1");
+        return "basic/literal";
+    }
     
     @Data
     static class User {
