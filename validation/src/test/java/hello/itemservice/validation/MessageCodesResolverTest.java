@@ -1,6 +1,5 @@
 package hello.itemservice.validation;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.validation.DefaultMessageCodesResolver;
 import org.springframework.validation.MessageCodesResolver;
@@ -15,7 +14,6 @@ public class MessageCodesResolverTest {
     void messageCodesResolverObject() {
         String[] messageCodes = codesResolver.resolveMessageCodes("required", "item");
         assertThat(messageCodes).containsExactly("required.item", "required");
-
     }
 
     @Test
@@ -23,9 +21,10 @@ public class MessageCodesResolverTest {
         String[] messageCodes = codesResolver.resolveMessageCodes("required", "item", "itemName", String.class);
         assertThat(messageCodes).containsExactly(
                 "required.item.itemName",
-                        "required.itemName",
-                        "required.java.lang.String",
-                        "required"
+                "required.itemName",
+                "required.java.lang.String",
+                "required"
         );
     }
+
 }
