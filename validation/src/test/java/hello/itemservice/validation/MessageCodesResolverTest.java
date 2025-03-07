@@ -26,8 +26,6 @@ public class MessageCodesResolverTest {
                         "required.itemName",
                         "required.java.lang.String",
                         "required"
-
-
         );
     }
 }
