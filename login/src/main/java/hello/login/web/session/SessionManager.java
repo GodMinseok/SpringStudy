@@ -41,17 +41,23 @@ public class SessionManager {
      * 세션 조회
      */
     public Object getSession(HttpServletRequest request) {
-        Cookie[] cookies = request.getCookies();
-        if (cookies == null) {
+        Cookie sessionCookie = findCookie(request, SESSION_COOKIE_NAME);
+        if (sessionCookie == null) {
             return null;
         }
-        for (Cookie cookie : cookies) {
-            if (cookie.getName().equals(SESSION_COOKIE_NAME)) {
-                return sessionStore.get(cookie.getValue());
-            }
-        }
-        return null;
+        return sessionStore.get(sessionCookie.getValue());
     }
+
+    /**
+     * 세션 만료
+     */
+    public void expire(HttpServletRequest request) {
+        Cookie sessionCookie = findCookie(request, SESSION_COOKIE_NAME);
+        if (sessionCookie != null) {
+            sessionStore.remove(sessionCookie.getValue());
+        }
+    }
+
     public Cookie findCookie(HttpServletRequest request, String cookieName) {
         if (request.getCookies() == null) {
             return null;
